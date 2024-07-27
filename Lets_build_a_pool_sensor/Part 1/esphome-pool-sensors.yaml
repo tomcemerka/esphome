@@ -156,11 +156,13 @@ sensor:
   - platform: dallas_temp
     address: 0xa375f2d4467dd328
     name: Outside Temperature
+    id: ${device_internal_name}_outside_temperature
 
   # Pool Water Temperature
   - platform: dallas_temp
     address: 0x155254d446587c28
     name: Water Temperature
+    id: ${device_internal_name}_water_temperature
 
 ################################################################################
 # Text Sensors
