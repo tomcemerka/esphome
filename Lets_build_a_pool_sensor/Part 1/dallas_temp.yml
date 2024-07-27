@@ -1,0 +1,10 @@
+  # Pool Outside Temperature
+  - platform: dallas_temp
+    address: 0xa375f2d4467dd328
+    name: Outside Temperature
+
+  # Pool Water Temperature
+  - platform: dallas_temp
+    address: 0x155254d446587c28
+    name: Water Temperature
+
