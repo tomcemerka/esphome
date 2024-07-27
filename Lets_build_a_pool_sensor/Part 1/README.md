@@ -9,6 +9,10 @@ In this part we will cover ESP32 mini board and poinouts
 - A Dallas Temperature Sensor DS18B20 - https://www.amazon.co.uk/dp/B0B3J8M6MQ?psc=1&ref=ppx_yo2ov_dt_b_product_details 
 
 ## Code
+
+### Getting Started with ESPHome and Home Assistant
+- https://esphome.io/guides/getting_started_hassio.html
+
 ### esphome-pool-sensors
 - esphome-pool-sensors.yaml - based on https://github.com/homeautomatorza/esphome/tree/main/Lets_build_a_room_sensor
 
