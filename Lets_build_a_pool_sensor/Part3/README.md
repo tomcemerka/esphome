@@ -8,7 +8,16 @@ In this part we will add a 1 Channel Relay Module (DC 5V) to operate Skimmer
 ## Code
 ### GPIO Switch
 - gpio_switch.yml - https://esphome.io/components/switch/gpio.html
-
+- restore_mode - https://esphome.io/components/switch/index.html#config-switch
+- restore_mode (Optional): Control how the switch attempts to restore state on bootup. NOTE : Not all components consider restore_mode. Check the documentation of the specific component to understand how this feature works for a particular component or device. For restoring on ESP8266s, also see restore_from_flash in the esp8266 section.
+-- RESTORE_DEFAULT_OFF - Attempt to restore state and default to OFF if not possible to restore.
+-- RESTORE_DEFAULT_ON - Attempt to restore state and default to ON.
+-- RESTORE_INVERTED_DEFAULT_OFF - Attempt to restore state inverted from the previous state and default to OFF.
+-- RESTORE_INVERTED_DEFAULT_ON - Attempt to restore state inverted from the previous state and default to ON.
+-- ALWAYS_OFF (Default) - Always initialize the switch as OFF on bootup.
+-- ALWAYS_ON - Always initialize the switch as ON on bootup.
+-- DISABLED - Does nothing and leaves it up to the downstream platform component to decide. For example, the component could read hardware and determine the state, or have a specific configuration option to regulate initial state.
+Unless a specific platform defines another default value, the default is ALWAYS_OFF.
 
 ## Relay description
 - Description:

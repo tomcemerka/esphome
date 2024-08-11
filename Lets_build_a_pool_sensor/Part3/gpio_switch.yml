@@ -3,7 +3,9 @@
 ################################################################################
 switch:
   - platform: gpio
-    pin: GPIO26
-    name: "Skimmer Switch"
+    pin: GPIO27
+    name: "Skimmer"
     id: ${device_internal_name}_skimmer_switch
+    restore_mode: RESTORE_DEFAULT_OFF
+
 
