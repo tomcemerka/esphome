@@ -1,0 +1,47 @@
+alias: Network Rack Fan Control
+description: Turns network rack fans on/off based on temperature thresholds
+triggers:
+  - entity_id: sensor.esphrack_inside_temperature
+    trigger: state
+conditions: []
+actions:
+  - choose:
+      - conditions:
+          - condition: numeric_state
+            entity_id: sensor.esphrack_inside_temperature
+            above: 34.9
+        sequence:
+          - target:
+              entity_id: switch.srvfan2
+            action: switch.turn_on
+            data: {}
+      - conditions:
+          - condition: numeric_state
+            entity_id: sensor.esphrack_inside_temperature
+            below: 35
+        sequence:
+          - target:
+              entity_id: switch.srvfan2
+            action: switch.turn_off
+            data: {}
+  - choose:
+      - conditions:
+          - condition: numeric_state
+            entity_id: sensor.esphrack_inside_temperature
+            above: 29.9
+        sequence:
+          - target:
+              entity_id: switch.srvfan1
+            action: switch.turn_on
+            data: {}
+      - conditions:
+          - condition: numeric_state
+            entity_id: sensor.esphrack_inside_temperature
+            below: 29
+        sequence:
+          - target:
+              entity_id: switch.srvfan1
+            action: switch.turn_off
+            data: {}
+mode: single
+
