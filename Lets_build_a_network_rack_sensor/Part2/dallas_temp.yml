@@ -2,23 +2,23 @@
 # Sensors
 ################################################################################
 sensor:
-  # Pool Outside Temperature
+  # Rack Room Temperature
   - platform: dallas_temp
-    address: 0xa375f2d4467dd328
-    name: Outside Temperature
-    id: ${device_internal_name}_outside_temperature
+    address: 0x1b15ffd446022c28
+    name: Room Temperature
+    id: ${device_internal_name}_room_temperature
     force_update: true
-    update_interval: 60s
+    update_interval: 30s
     resolution: 11
     accuracy_decimals: 2
 
-  # Pool Temperature
+  # Rack Inside Temperature
   - platform: dallas_temp
-    address: 0x155254d446587c28
-    name: Pool Temperature
-    id: ${device_internal_name}_pool_temperature
+    address: 0x5f17efd446a19e28
+    name: Inside Temperature
+    id: ${device_internal_name}_inside_temperature
     force_update: true
-    update_interval: 60s
+    update_interval: 30s
     resolution: 11
     accuracy_decimals: 2
 

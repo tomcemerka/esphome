@@ -2,10 +2,10 @@
 # Substitution Variables
 ################################################################################
 substitutions:
-  device_internal_name: esphpool
-  device_wifi_name: esph-pool-wifi
-  device_friendly_name: ESPH Pool
-  device_ip_address: 10.69.30.24
+  device_internal_name: esphome_foundation_device
+  device_wifi_name: esphome-foundation-device-wifi
+  device_friendly_name: ESPHome Foundation Device
+  device_ip_address: 192.168.0.200
   device_sampling_time: 30s
 
 ################################################################################
@@ -33,7 +33,6 @@ esp32:
 # Enable logging
 ################################################################################
 logger:
-#  level: DEBUG
 
 ################################################################################
 # Enable Home Assistant API
@@ -61,13 +60,11 @@ wifi:
   networks:
     - ssid: !secret wifi_ssid
       password: !secret wifi_password
-
   manual_ip:
     static_ip: ${device_ip_address}
     gateway: !secret gateway_address
     subnet: !secret subnet_address
-
-  # Enable fallback hotspot (captive portal) in case Wi-Fi connection fails
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: ${device_wifi_name}
     password: !secret web_server_password
@@ -147,7 +144,7 @@ sensor:
                 (minutes ? to_string(minutes) + "m " : "") +
                 (to_string(seconds) + "s")
               ).c_str();
-
+    
 ################################################################################
 # Text Sensors
 ################################################################################
@@ -174,7 +171,7 @@ text_sensor:
   # Custom Text sensors
   #-------------------------------------------------------------------------------
   - platform: template
-    name: ESP32 Uptime
+    name: Uptime Human Readable
     id: ${device_internal_name}_uptime_human
     icon: mdi:clock-start
 
@@ -189,13 +186,6 @@ switch:
   - platform: safe_mode
     name: Use Safe Mode
     id: device_safe_mode
-
-#  - platform: gpio
-#    pin: GPIO27
-#    name: "Skimmer"
-#    id: ${device_internal_name}_skimmer_switch
-#    restore_mode: RESTORE_DEFAULT_ON
-    #restore_mode: RESTORE_INVERTED_DEFAULT_OFF
 
 ################################################################################
 # Interval

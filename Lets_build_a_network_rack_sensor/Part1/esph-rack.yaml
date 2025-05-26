@@ -2,10 +2,10 @@
 # Substitution Variables
 ################################################################################
 substitutions:
-  device_internal_name: esphpool
-  device_wifi_name: esph-pool-wifi
-  device_friendly_name: ESPH Pool
-  device_ip_address: 10.69.30.24
+  device_internal_name: esphrack
+  device_wifi_name: esph-rack-wifi
+  device_friendly_name: ESPH Rack
+  device_ip_address: 10.69.30.25
   device_sampling_time: 30s
 
 ################################################################################
@@ -190,13 +190,6 @@ switch:
     name: Use Safe Mode
     id: device_safe_mode
 
-#  - platform: gpio
-#    pin: GPIO27
-#    name: "Skimmer"
-#    id: ${device_internal_name}_skimmer_switch
-#    restore_mode: RESTORE_DEFAULT_ON
-    #restore_mode: RESTORE_INVERTED_DEFAULT_OFF
-
 ################################################################################
 # Interval
 ################################################################################
@@ -212,3 +205,4 @@ interval:
           else:
             - lambda: |-
                 id(wifi_connection) = false;
+
